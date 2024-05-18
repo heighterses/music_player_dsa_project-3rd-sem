@@ -1,0 +1,3 @@
+C:/Users/OC/CLionProjects/music-player-dsa-project/cmake-build-debug/CMakeFiles/music_player_dsa_project.dir
+C:/Users/OC/CLionProjects/music-player-dsa-project/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/OC/CLionProjects/music-player-dsa-project/cmake-build-debug/CMakeFiles/rebuild_cache.dir
