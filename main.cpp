@@ -76,18 +76,28 @@ public:
         }
     }
 
-    // Function to search for a song by name
-    bool searchSong(const string& songName) {
+    // Function to search for a song by name and return the SongNode pointer
+    SongNode* searchSong(const string& songName) {
         SongNode* temp = playlist;
         while (temp != nullptr) {
             if (temp->name == songName) {
                 cout << "Song found: " << songName << endl;
-                return true;
+                return temp;
             }
             temp = temp->next;
         }
         cout << "Song not found." << endl;
-        return false;
+        return nullptr;
+    }
+
+    // Function to play a searched song
+    void playSearchedSong(const string& songName) {
+        SongNode* searchedSong = searchSong(songName);
+        if (searchedSong != nullptr) {
+            stopSong();
+            currentSong = searchedSong;
+            playSong(currentSong->name);
+        }
     }
 
     // Function to start playing the playlist from the beginning
@@ -159,7 +169,7 @@ int main() {
                 cout << "Enter song name to search: ";
                 string songName;
                 cin >> songName;
-                player.searchSong(songName);
+                player.playSearchedSong(songName);
                 break;
             }
             case 6:
